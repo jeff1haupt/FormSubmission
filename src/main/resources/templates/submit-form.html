@@ -16,32 +16,32 @@
     <div class="card">
         <div class="card-body">
             <div class="col-md-10">
-                <form action="#" th:action="@{/submitForm}" th:object="${formSubmit}"
+                <form action="#" th:action="@{/save-form}" th:object="${formSubmit}"
                       method="post">
                     <div class="row">
                         <div class="form-group col-md-8">
-                            <label for="name" class="col-form-label">First Name</label>
+                            <label for="firstName" class="col-form-label">First Name</label>
                             <input type="text" th:field="*{firstName}" class="form-control"
                                    id="firstName" placeholder="First Name" />
                         </div>
                         <div class="form-group col-md-8">
-                            <label for="name" class="col-form-label">Last Name</label>
+                            <label for="lastName" class="col-form-label">Last Name</label>
                             <input type="text" th:field="*{lastName}" class="form-control"
                                    id="lastName" placeholder="Last Name" />
                         </div>
                         <div class="form-group col-md-8">
-                            <label for="email" class="col-form-label">Email</label>
+                            <label for="emailAddress" class="col-form-label">Email</label>
                             <input type="text" th:field="*{emailAddress}" class="form-control"
                                    id="emailAddress" placeholder="Email Address" />
                         </div>
                         <div class="form-group col-md-8">
-                            <label for="email" class="col-form-label">Phone Number</label>
+                            <label for="phoneNumber" class="col-form-label">Phone Number</label>
                             <input type="text" th:field="*{phoneNumber}" class="form-control"
                                    id="phoneNumber" placeholder="Phone Number" />
                         </div>
 
                         <div class="form-group col-md-8">
-                            <label for="email" class="col-form-label">Message</label>
+                            <label for="message" class="col-form-label">Message</label>
                             <input type="text" th:field="*{message}" class="form-control"
                                    id="message" placeholder="Type your message here..." />
                         </div>

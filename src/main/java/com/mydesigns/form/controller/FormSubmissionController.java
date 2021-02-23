@@ -5,21 +5,27 @@ import com.mydesigns.form.entity.FormSubmissionFields;
 import com.mydesigns.form.service.FormSubmissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/submitForm")
 public class FormSubmissionController {
 
     @Autowired
     FormSubmissionService service;
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String createFormSubmission(FormSubmissionFields formSubmit)
+    @GetMapping("/submit-form")
+    public String createForm(Model model) {
+
+        model.addAttribute("formSubmit", new FormSubmissionFields());
+        return "submit-form";
+    }
+
+    @PostMapping("/save-form")
+    public String createFormSubmission(@ModelAttribute FormSubmissionFields formSubmit)
     {
         service.createFormSubmission(formSubmit);
-        return "redirect:/";
+        return "results";
     }
 
 }
